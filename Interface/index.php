@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-  <script src="{{ asset('js/color-modes.js') }}"></script>
+  <script src="js/color-modes.js"></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,15 +11,17 @@
   <meta name="generator" content="Hugo 0.118.2">
   <title>StoreTails</title>
 
+  <link href="css/style.css" rel="stylesheet">
+
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
 
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="{{ asset('css/headers.css') }}" rel="stylesheet">
+  <link href="css/headers.css" rel="stylesheet">
 </head>
 <style>
   .text-body-secondary {
@@ -302,8 +304,11 @@
                 <span style="color: #E95A0C; font-size: 14px;">STORYTAILS</span>
               </a>
               <div class="text-end"> 
-                <button type="button" class="btn btn-outline-light me-3 btn-sm fs-8 btn-size">Sign In</button>
-              <a href="{{ route('registar') }}">
+                <a href = "login.blade.php">
+                	<button type="button" class="btn btn-outline-light me-3 btn-sm fs-8 btn-size">Sign In</button>
+                </a>
+                <a href="registar.blade.php"> 
+              <!-- <a href="{{ route('registar') }}"> -->
                 <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size">Register</button>
               </a>
               </div>
@@ -454,7 +459,7 @@
     </div>
 
   </main>
-  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
