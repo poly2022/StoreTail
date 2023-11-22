@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "storetail";
+$database = "store_tail";
 $username = "root";
 $password = "";
 
