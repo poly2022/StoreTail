@@ -23,6 +23,7 @@
 </html>
 
 -->
+<?php include("conectionBD.php")?>
 <!DOCTYPE html>
 <html lang="en">
    
@@ -36,7 +37,7 @@
     <body>
    
     <div class="form-container">
-        <form id="registrationForm">
+        <form id="registrationForm" action="" method="post">
             <div class="form-group">
                 <label for="firstname">First name:</label>
                 <input type="text" id="firstname" name="firstname">
@@ -61,7 +62,7 @@
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="confirm-password">
             </div>
-            <button type="submit">Submit</button>
+            <input type="submit" class="" name="btSubmit" id="btSubmit" value="Submit" class="primary" />
             <div id="validationErrors"></div>
         </form>
 </div>

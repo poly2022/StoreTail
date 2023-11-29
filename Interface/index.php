@@ -23,6 +23,7 @@
 
   <link href="css/headers.css" rel="stylesheet">
 </head>
+
 <style>
   .text-body-secondary {
     --bs-text-opacity: 1;
@@ -304,10 +305,10 @@
                 <span style="color: #E95A0C; font-size: 14px;">STORYTAILS</span>
               </a>
               <div class="text-end"> 
-                <a href = "login.blade.php">
+                <a href = "login.php">
                 	<button type="button" class="btn btn-outline-light me-3 btn-sm fs-8 btn-size">Sign In</button>
                 </a>
-                <a href="registar.blade.php"> 
+                <a href="registar.php"> 
               <!-- <a href="{{ route('registar') }}"> -->
                 <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size">Register</button>
               </a>
