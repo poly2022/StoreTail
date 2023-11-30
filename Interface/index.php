@@ -19,10 +19,13 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" rel="stylesheet">
+
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <link href="css/headers.css" rel="stylesheet">
 </head>
+
 <style>
   .text-body-secondary {
     --bs-text-opacity: 1;
@@ -153,8 +156,6 @@
     --bs-btn-padding-y: .25rem;
     --bs-btn-padding-x: .5rem;
     --bs-btn-font-size: .75rem;
-    "
-
   }
 
   .nav-pills .nav-link {
@@ -185,15 +186,15 @@
 
   .btn-read {
     /* width: 100%; */
-    background-color: #E95A0C; 
-    color: white; 
-    height: 30px; 
-    line-height: 30px; 
-    font-size: 14px; 
-    font-weight: bold; 
+    background-color: #E95A0C;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
     text-align: center;
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
@@ -204,18 +205,17 @@
     color: white;
     padding: 10px;
   }
+
   .card {
-  width: 60%;
-  height: 100%;
-}
+    width: 60%;
+    height: 100%;
+  }
 
-.custom-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-
+  .custom-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
 </style>
 
 <body>
@@ -292,7 +292,6 @@
   </div>
 
 
-
   <main>
     <header class="position-relative">
       <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/9447293-outono-rural-paisagem-a-noite-luz-com-por-do-sol-azul-e-laranja-ceu-fundo-desenho-de-outono-estacao-no-campo-com-floresta-arvore-e-campo-grama-com-sunrise-backdrop-natural-banner-vetor.jpg" class="img-fluid w-100" style="height: 55vh; object-fit: cover;" alt="Background Image">
@@ -303,14 +302,14 @@
               <a href="/" class="link-body-emphasis text-decoration-none">
                 <span style="color: #E95A0C; font-size: 14px;">STORYTAILS</span>
               </a>
-              <div class="text-end"> 
-                <a href = "login.blade.php">
-                	<button type="button" class="btn btn-outline-light me-3 btn-sm fs-8 btn-size">Sign In</button>
+              <div class="text-end">
+                <a href="login.blade.php">
+                  <button type="button" class="btn btn-outline-light me-3 btn-sm fs-8 btn-size">Sign In</button>
                 </a>
-                <a href="registar.blade.php"> 
-              <!-- <a href="{{ route('registar') }}"> -->
-                <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size">Register</button>
-              </a>
+                <a href="registar.blade.php">
+                  <!-- <a href="{{ route('registar') }}"> -->
+                  <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size">Register</button>
+                </a>
               </div>
             </div>
           </div>
@@ -319,9 +318,9 @@
       <div class="position-absolute top-50 start-50 translate-middle text-center ">
         <h4 style="color: black;" class="fw-bold mb-4">Find a book</h4>
         <div class="input-group mb-0" style="max-width: 500px; margin: auto;">
-          <input type="text" class="form-control" placeholder="Search" aria-label="Search" style="width: 400px;" aria-describedby="button-addon2">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-            <i class="bi bi-search" style="color: #E95A0C;"></i>
+          <input type="text" class="form-control" placeholder="eg. title, type..." aria-label="Search" style="width: 400px;" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="background-color: #E95A0C; width: 50px; border: none;">
+            <i class="bi bi-search text-white"></i>
           </button>
         </div>
       </div>
@@ -343,86 +342,82 @@
     </header>
 
     <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-body-tertiary">
-  <div class="container" style="max-height: 80vh; overflow-y: auto;">
-    <h2 style="color: #E95A0C;" class="text-center">New Books</h2>
-    <div class="container bg-white py-5">
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-          <div class="card h-80">
-            <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-              <small class="text-body-secondary">Charlotte's Web</small>
+      <div class="container" style="max-height: 80vh; overflow-y: auto;">
+        <h2 style="color: #E95A0C;" class="text-center">New Books</h2>
+        <div class="container bg-white py-5">
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+              <?php
+              include('book.php');
+              ?>
             </div>
-            <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-80">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-              <small class="text-body-secondary mb-0 mt-0">The Gruffalo</small>
+            <div class="col">
+              <div class="card h-80">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
+                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                  <small class="text-body-secondary mb-0 mt-0">The Gruffalo</small>
+                </div>
+                <a href="#" class="btn btn-read mt-2">READ</a>
+              </div>
             </div>
-            <a href="#" class="btn btn-read mt-2">READ</a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-80">
-            <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-              <small class="text-body-secondary">Charlotte's Web</small>
+            <div class="col">
+              <div class="card h-80">
+                <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
+                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                  <small class="text-body-secondary">Charlotte's Web</small>
+                </div>
+                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
+              </div>
             </div>
-            <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-80">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-              <small class="text-body-secondary">The Gruffalo</small>
+            <div class="col">
+              <div class="card h-80">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
+                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                  <small class="text-body-secondary">The Gruffalo</small>
+                </div>
+                <a href="#" class="btn btn-read mt-2">PREVIEW</a>
+              </div>
             </div>
-            <a href="#" class="btn btn-read mt-2">PREVIEW</a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-80">
-            <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-              <small class="text-body-secondary">Charlotte's Web</small>
+            <div class="col">
+              <div class="card h-80">
+                <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
+                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                  <small class="text-body-secondary">Charlotte's Web</small>
+                </div>
+                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
+              </div>
             </div>
-            <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-80">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-              <small class="text-body-secondary">The Gruffalo</small>
+            <div class="col">
+              <div class="card h-80">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
+                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                  <small class="text-body-secondary">The Gruffalo</small>
+                </div>
+                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
+              </div>
             </div>
-            <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-80">
-            <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-              <small class="text-body-secondary">Charlotte's Web</small>
+            <div class="col">
+              <div class="card h-80">
+                <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
+                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                  <small class="text-body-secondary">Charlotte's Web</small>
+                </div>
+                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
+              </div>
             </div>
-            <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-80">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-              <small class="text-body-secondary">The Gruffalo</small>
+            <div class="col">
+              <div class="card h-80">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
+                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+                  <small class="text-body-secondary">The Gruffalo</small>
+                </div>
+                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">PREVIEW</a>
+              </div>
             </div>
-            <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">PREVIEW</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
 
 
