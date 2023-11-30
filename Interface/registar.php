@@ -139,9 +139,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registration Form</title>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
- <link rel="stylesheet" href="css/style.css">
-</head>
+ <link href="css/style.css" rel="stylesheet" >
+ 
+ <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
 
+  <link href="css/app.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<header>
+
+</header>
 <body>
     <?php
     $userController = new UserController();
@@ -164,7 +175,7 @@
                 <input type="text" id="last_name" name="last_name">
             </div>
             <div class="form-group">
-                <label for="user_name">user_name: <span class="required">*</span></label>
+                <label for="user_name">Username: <span class="required">*</span></label>
                 <input type="text" id="user_name" name="user_name" required>
             </div>
             <div class="form-group">
@@ -179,15 +190,17 @@
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirmpassword" name="confirmpassword">
             </div>
-            <div class="form-group">
-            
-            <input type="submit" class="" name="btSubmit" id="btSubmit" value="Submit" class="primary" />
+           
+            <div class="form-group">   
+                <input type="submit" class="styled-submit-btn" name="btSubmit" id="btSubmit" value="Submit" class="primary" />
             </div>
             <div id="validationErrors"></div>
         </form>
     </div>
 
     <script src="script.js"></script>
-</body>
 
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
