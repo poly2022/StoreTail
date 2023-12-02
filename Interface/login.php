@@ -23,20 +23,21 @@
 </html>
 
 -->
+<?php include("../DataAccessLayer/conectionBD.php") ?>
 <!DOCTYPE html>
 <html lang="en">
    
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registration Form</title>
+<title>Login Form</title>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
  <link rel="stylesheet" href="css/style.css">
 </head>
     <body>
    
     <div class="form-container">
-        <form id="registrationForm">
+        <form action="index.php?validate_login.php" id="loginForm" method="POST">
             <div class="form-group">
                 <label for="username">Username: <span class="required">*</span></label>
                 <input type="text" id="username" name="username" required>
@@ -49,6 +50,11 @@
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="confirm-password">
+            </div>
+            <div class="form-group">
+                
+                  <h5><a href="registar.php">Register Here</a></h5>
+               
             </div>
             <button type="submit">Submit</button>
             <div id="validationErrors"></div>
