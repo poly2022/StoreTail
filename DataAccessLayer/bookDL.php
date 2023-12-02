@@ -1,6 +1,7 @@
 <?php
 
-include('bookBL.php');
+include('../BusinessLayer/Book/bookBL.php');
+include('conectionBD.php');
 
 class BookDL {
     private $conn;

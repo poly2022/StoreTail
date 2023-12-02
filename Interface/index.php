@@ -305,10 +305,10 @@
                 <span style="color: #E95A0C; font-size: 14px;">STORYTAILS</span>
               </a>
               <div class="text-end">
-                <a href="login.blade.php">
+                <a href="login.php">
                   <button type="button" class="btn btn-outline-light me-3 btn-sm fs-8 btn-size">Sign In</button>
                 </a>
-                <a href="registar.blade.php">
+                <a href="registar.php">
                   <!-- <a href="{{ route('registar') }}"> -->
                   <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size">Register</button>
                 </a>
@@ -348,80 +348,11 @@
         <h2 style="color: #E95A0C;" class="text-center">New Books</h2>
         <div class="container bg-white py-5">
           <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-              <?php
-              include('book.php');
-              ?>
-            </div>
-            <div class="col">
-              <div class="card h-80">
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
-                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-                  <small class="text-body-secondary mb-0 mt-0">The Gruffalo</small>
-                </div>
-                <a href="#" class="btn btn-read mt-2">READ</a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-80">
-                <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
-                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-                  <small class="text-body-secondary">Charlotte's Web</small>
-                </div>
-                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-80">
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
-                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-                  <small class="text-body-secondary">The Gruffalo</small>
-                </div>
-                <a href="#" class="btn btn-read mt-2">PREVIEW</a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-80">
-                <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
-                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-                  <small class="text-body-secondary">Charlotte's Web</small>
-                </div>
-                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-80">
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
-                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-                  <small class="text-body-secondary">The Gruffalo</small>
-                </div>
-                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-80">
-                <img src="https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500" class="card-img-top img-fluid custom-img" alt="...">
-                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-                  <small class="text-body-secondary">Charlotte's Web</small>
-                </div>
-                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">READ</a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-80">
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg" class="card-img-top img-fluid custom-img" alt="...">
-                <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
-                  <small class="text-body-secondary">The Gruffalo</small>
-                </div>
-                <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">PREVIEW</a>
-              </div>
-            </div>
+              <?php include("../Interface/book.php") ?>
           </div>
         </div>
       </div>
     </div>
-
-
 
     <div>
       <ul class="nav w-100 justify-content-center align-items-end mt-0 mb-0 p-0 m-0 custom-navbar">
