@@ -188,5 +188,5 @@ ob_start(); // Inicia o buffer de saída
 <?php
 $content = ob_get_clean(); // Obtém o conteúdo do buffer e limpa o buffer
 
-include('headerFooter.php'); // Inclui o arquivo do template com o conteúdo especificado
+include('pageDefault.php'); // Inclui o arquivo do template com o conteúdo especificado
 ?>
