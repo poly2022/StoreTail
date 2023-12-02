@@ -307,7 +307,7 @@
                                 <a type="button" class="btn btn-outline-light me-3 btn-sm fs-8 btn-size" href="index.php">
                                     Home
                                 </a>
-                                <a href="profile.php">
+                                <a href="">
                                     <button type="button" class="btn" style="color: white">
                                         <i class="bi bi-person bi-2x"></i>
                                     </button>
@@ -328,7 +328,7 @@
             </div>
             <div class="position-absolute top-100 start-50 translate-middle text-center w-100 bg-white" style="margin-top: 110px;">
                 <div class="container">
-                <h4 style="color: black;" class="fw-bold mb-3 mt-4">Name of book</h4>
+                    <h4 style="color: black;" class="fw-bold mb-3 mt-4">Name of book</h4>
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link text-secondary me-3" href="#">About this book</a>
@@ -346,7 +346,8 @@
 
         <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-body-tertiary">
             <div class="container" style="max-height: 80vh; overflow-y: auto;">
-                @yield('content')
+                <!-- Conteúdo variável -->
+                <?php echo $content; ?>
             </div>
         </div>
 
@@ -379,9 +380,7 @@
                 </ul>
             </footer>
         </div>
-
         </div>
-
     </main>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

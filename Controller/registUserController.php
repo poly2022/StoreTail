@@ -5,8 +5,8 @@ require_once("../DataAccessLayer/conectionBD.php");
 class UserController {
     private $db;
 
-    public function __construct() {
-        $this->db = new Database();
+    public function __construct($conn) {
+        $this->db = $conn;
     }
 
     public function registerUser($first_name, $last_name, $user_name, $email, $password, $confirm_password) {

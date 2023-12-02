@@ -307,7 +307,7 @@
                                 <a type="button" class="btn btn-outline-light me-3 btn-sm fs-8 btn-size" href="index.php">
                                     Home
                                 </a>
-                                <a href="profile.php">
+                                <a href="">
                                     <button type="button" class="btn" style="color: white">
                                         <i class="bi bi-person bi-2x"></i>
                                     </button>

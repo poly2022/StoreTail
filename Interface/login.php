@@ -47,11 +47,9 @@
                 <input type="password" id="confirm-password" name="confirm-password">
             </div>
             <div class="form-group">
-
                 <h5><a href="registar.php">Register Here</a></h5>
-
             </div>
-            <button type="submit">Submit</button>
+            <button class="styled-submit-btn" type="submit">Submit</button>
             <div id="validationErrors"></div>
         </form>
     </div>
