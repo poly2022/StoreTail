@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/11/2023 às 22:56
+-- Tempo de geração: 02/12/2023 às 16:14
 -- Versão do servidor: 11.3.0-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -229,7 +229,9 @@ CREATE TABLE `books` (
 
 INSERT INTO `books` (`id`, `title`, `description`, `genre_id`, `cover_url`, `read_time`, `age_groups_id`, `is_active`, `access_level`, `created_at`, `updated_at`) VALUES
 (1, 'The Gruffalo', '', 3, 'https://upload.wikimedia.org/wikipedia/en/3/34/Fairuse_Gruffalo.jpg', 20, 1, 1, 0, NULL, NULL),
-(2, 'Charlote\'s Web', '', 1, 'https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500', 30, 1, 1, 1, NULL, NULL);
+(2, 'Charlote\'s Web', '', 1, 'https://embed.cdn.pais.scholastic.com/v1/channels/clubs-us/products/identifiers/isbn/9780590302715/primary/renditions/500', 30, 1, 1, 1, NULL, NULL),
+(6, 'Petter\'s Perfect Pet', '', 1, 'https://www.kdnovelties.com/product-resources/personalized-virtual-books/Perfect%20Pet%20Dinosaur/PPDINO01.jpg', 20, 2, 1, 0, NULL, NULL),
+(7, 'Freddie and the Fairy', '', 3, 'https://m.media-amazon.com/images/I/81Q3WK0nBVL._SL1500_.jpg', 15, 2, 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -734,7 +736,7 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT de tabela `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`

@@ -300,7 +300,7 @@
                 <div class="container-fluid p-2 mb-0 position-absolute top-0 start-0 w-100" style="background-color: #E1700F">
                     <div class="container">
                         <div class="d-flex align-items-center justify-content-between">
-                            <a href="/" class="link-body-emphasis text-decoration-none">
+                            <a href="index.php" class="link-body-emphasis text-decoration-none">
                                 <span style="color: white; font-size: 14px;">STORYTAILS</span>
                             </a>
                             <div class="text-end">

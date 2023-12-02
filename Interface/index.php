@@ -17,6 +17,8 @@
 
   <link href="css/app.css" rel="stylesheet">
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -156,8 +158,6 @@
     --bs-btn-padding-y: .25rem;
     --bs-btn-padding-x: .5rem;
     --bs-btn-font-size: .75rem;
-    
-
   }
 
   .nav-pills .nav-link {
@@ -178,21 +178,14 @@
     font-family: 'Montserrat', sans-serif;
   }
 
-  .card-img-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    position: bottom;
-    bottom: 0;
-    width: 100%;
-    height: 5vh;
-  }
-
   .btn-read {
     /* width: 100%; */
     background-color: #E95A0C;
     color: white;
     height: 30px;
+    width: 60%;
     line-height: 30px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     display: flex;
@@ -200,22 +193,15 @@
     align-items: center;
   }
 
-  .card-title {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    padding: 10px;
-  }
-
   .card {
-    width: 60%;
-    height: 100%;
+    width: 200px;
+    height: auto;
+    margin-bottom: 50px;
   }
 
   .custom-img {
-    width: 100%;
-    height: 180px;
+    width: auto;
+    height: auto;
     object-fit: cover;
   }
 </style>
@@ -301,7 +287,7 @@
         <div class="container-fluid p-2 mb-0 position-absolute top-0 start-0 w-100" style="background-color: rgba(0, 0, 0, 0.7);">
           <div class="container">
             <div class="d-flex align-items-center justify-content-between">
-              <a href="/" class="link-body-emphasis text-decoration-none">
+              <a href="index.php" class="link-body-emphasis text-decoration-none">
                 <span style="color: #E95A0C; font-size: 14px;">STORYTAILS</span>
               </a>
               <div class="text-end">

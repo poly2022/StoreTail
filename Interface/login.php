@@ -23,20 +23,15 @@
 </html>
 
 -->
+
 <?php include("../DataAccessLayer/conectionBD.php") ?>
-<!DOCTYPE html>
-<html lang="en">
-   
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Form</title>
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
- <link rel="stylesheet" href="css/style.css">
-</head>
-    <body>
-   
-    <div class="form-container">
+
+<?php
+    // Define o conteúdo específico da página
+    ob_start(); // Inicia o buffer de saída
+?>
+<div class="content">
+<div class="form-container">
         <form action="index.php?validate_login.php" id="loginForm" method="POST">
             <div class="form-group">
                 <label for="username">Username: <span class="required">*</span></label>
@@ -52,14 +47,17 @@
                 <input type="password" id="confirm-password" name="confirm-password">
             </div>
             <div class="form-group">
-                
-                  <h5><a href="registar.php">Register Here</a></h5>
-               
+
+                <h5><a href="registar.php">Register Here</a></h5>
+
             </div>
             <button type="submit">Submit</button>
             <div id="validationErrors"></div>
         </form>
+    </div>
 </div>
-    <script src="script.js"></script>
-    </body>
-</html>
+<?php
+    $content = ob_get_clean(); // Obtém o conteúdo do buffer e limpa o buffer
+
+    include('headerFooter.php'); // Inclui o arquivo do template com o conteúdo especificado
+?>
