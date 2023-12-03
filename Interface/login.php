@@ -31,7 +31,11 @@
     ob_start(); // Inicia o buffer de saída
 ?>
 <div class="content">
+
 <div class="form-container">
+<div class="text-center mb-5">
+        <img src="../Interface/img/storytail-logo-02.png" alt="Logo da Empresa" style="width: 200px; border-radius: 4px">
+    </div>
         <form action="index.php?validate_login.php" id="loginForm" method="POST">
             <div class="form-group">
                 <label for="username">Username: <span class="required">*</span></label>

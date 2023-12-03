@@ -282,7 +282,7 @@
 
   <main>
     <header class="position-relative">
-      <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/9447293-outono-rural-paisagem-a-noite-luz-com-por-do-sol-azul-e-laranja-ceu-fundo-desenho-de-outono-estacao-no-campo-com-floresta-arvore-e-campo-grama-com-sunrise-backdrop-natural-banner-vetor.jpg" class="img-fluid w-100" style="height: 55vh; object-fit: cover;" alt="Background Image">
+      <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/9447293-outono-rural-paisagem-a-noite-luz-com-por-do-sol-azul-e-laranja-ceu-fundo-desenho-de-outono-estacao-no-campo-com-floresta-arvore-e-campo-grama-com-sunrise-backdrop-natural-banner-vetor.jpg" class="img-fluid w-100" style="height: 45vh; object-fit: cover;" alt="Background Image">
       <div class="position-absolute top-0 start-0 w-100">
         <div class="container-fluid p-2 mb-0 position-absolute top-0 start-0 w-100" style="background-color: rgba(0, 0, 0, 0.7);">
           <div class="container">
@@ -303,7 +303,7 @@
           </div>
         </div>
       </div>
-      <div class="position-absolute top-50 start-50 translate-middle text-center ">
+      <div class="position-absolute top-50 start-50 translate-middle text-center">
         <h4 style="color: black;" class="fw-bold mb-4">Find a book</h4>
         <div class="input-group mb-0" style="max-width: 500px; margin: auto;">
           <input type="text" class="form-control" placeholder="eg. title, type..." aria-label="Search" style="width: 400px;" aria-describedby="button-addon2">
@@ -329,13 +329,11 @@
       </div>
     </header>
 
-    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-body-tertiary">
-      <div class="container" style="max-height: 80vh; overflow-y: auto;">
-        <h2 style="color: #E95A0C;" class="text-center">New Books</h2>
-        <div class="container bg-white py-5">
-          <div class="row row-cols-1 row-cols-md-4 g-4">
-              <?php include("../Interface/book.php") ?>
-          </div>
+    <div class="container-fluid d-flex justify-content-center align-items-center bg-body-tertiary flex-column">
+      <h2 style="color: #E95A0C;" class="text-center mt-4">New Books</h2>
+      <div class="container bg-white py-4 mb-4" style="max-height: 80vh; overflow-y: auto;">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <?php include("../Interface/book.php") ?>
         </div>
       </div>
     </div>
