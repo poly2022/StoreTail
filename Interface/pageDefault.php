@@ -319,7 +319,7 @@
             </div>
             <div class="position-absolute top-50 start-50 translate-middle text-center ">
                 <h4 style="color: black;" class="fw-bold mb-3">Find a book</h4>
-                <div class="input-group mb-0" style="max-width: 500px; margin: auto; height: 25px">
+                <div class="input-group mb-0" style="max-width: 500px; margin: auto; height: 35px">
                     <input type="text" class="form-control" placeholder="eg. title, type..." aria-label="Search" style="width: 400px; height: 35px;" aria-describedby="button-addon2">
                     <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="background-color: black; width: 50px; height: 35px; border: none;">
                         <i class="bi bi-search text-white "></i>

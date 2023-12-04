@@ -87,8 +87,6 @@ header h1 {
 </style>
 
 
-
-
 <div class="content">
 <div class="profile-container">
     <header>
@@ -101,29 +99,56 @@ header h1 {
             <button class="new-picture-btn">new picture</button>
         </div>
     </section>
+    <?php
+    if(isset($_POST['btperfil'])){
+		$flag=false;
+		$flag_email=false;
+		$flag_password=false;
+		
+		$profileData['first_name']=$_POST['first_name'];
+		$profileData['last_name']=$_POST['last_name'];
+		$profileData['email']=$_POST['email'];
+		
+
+
+    $atualizar="UPDATE users SET first_name='{$profileData['first_name']}', last_name='{$profileData['last_name']}', email='{$profileData['email']}' WHERE id='{$_SESSION["id"]}'";
+    $result=mysqli_query($conexao,$atualizar);
+    if ($result) {
+      ?>
+      <script>
+          alert('Dados atualizados com sucesso!');
+          window.location.href = 'profile.php';
+      </script>
+  <?php
+  } else {
+      echo "Erro na atualização: " . mysqli_error($conexao);
+  }
+  }
+
+  ?>
     <section class="profile-info">
-        <form id="profileForm">
+        <form id="profileForm" method="POST" enctype="multipart/form-data">
             <div class="form-field">
                 <label for="firstname">Firstname:</label>
-                <input type="text" id="firstname" name="firstname" value="<?php echo $profileData['first_name']; ?>">
+                <input type="text" id="first_name" name="first_name" value="<?php echo $profileData['first_name']; ?>">
             </div>
             <div class="form-field">
                 <label for="lastname">Lastname:</label>
-                <input type="text" id="lastname" name="lastname" value="<?php echo $profileData['last_name']; ?>">
+                <input type="text" id="last_name" name="last_name" value="<?php echo $profileData['last_name']; ?>">
             </div>
             <div class="form-field">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" disabled placeholder="" value="<?php echo $profileData['user_name']; ?>">
+                <input type="text" id="user_name" name="user_name" disabled placeholder="" value="<?php echo $profileData['user_name']; ?>">
             </div>
             <div class="form-field">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" value="<?php echo $profileData['email']; ?>">
             </div>
             <div class="form-field">
-            <button type="submit" class="update-btn">update</button>
+            <input type="submit" name="btperfil" id="btperfil" value="Update" class="update-btn"/>
             </div>
             <div class="form-field">
-            <a href="logout.php"
+            <a href="logout.php">
             <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size" style="background-color: red;">Logout</button>
             </a>
             </div>
