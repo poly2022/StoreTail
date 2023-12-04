@@ -1,5 +1,6 @@
 
-<?php include("../DataAccessLayer/conectionBD.php") ?>
+<?php include("../DataAccessLayer/conectionBD.php");
+session_start(); ?>
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -77,6 +78,7 @@ header h1 {
     ob_start(); // Inicia o buffer de saída
 ?>
 	<?php
+  
 			$query="select * from users where id= '".$_SESSION["id"]."'";
 			$result=mysqli_query($conexao,$query);
 			while($registo=mysqli_fetch_assoc($result)){

@@ -343,7 +343,7 @@
       </div>
         </header>
 
-        <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-center align-items-center bg-body-tertiary">
             <div class="container" style="max-height: 80vh; overflow-y: auto;">
                <!-- Conteúdo variável -->
                 <?php echo $content; ?>
