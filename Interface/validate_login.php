@@ -14,6 +14,9 @@
 					$_SESSION["login_status"]=1;
 					$_SESSION["user_name"]=$registo["user_name"];
 					$_SESSION["user_types_id"]=$registo["user_types_id"];
+					?>
+					<script> alert("Login")</script>
+					<?php
 				}else { ?>
 						<script> alert("Senha incorreta ")</script><?php
 					}
