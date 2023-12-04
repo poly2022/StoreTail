@@ -139,6 +139,7 @@
 // Define o conteúdo específico da página
 ob_start(); // Inicia o buffer de saída
 ?>
+
 <div class="content">
     <?php
     $userController = new UserController($conexao);
@@ -150,7 +151,11 @@ ob_start(); // Inicia o buffer de saída
     }
     ?>
 
+
     <div class="form-container">
+    <div class="text-center mb-5">
+        <img src="../Interface/img/storytail-logo-02.png" alt="Logo da Empresa" style="width: 200px; border-radius: 4px">
+    </div>
         <form id="registrationForm" action="" method="post">
             <div class="form-group">
                 <label for="first_name">First name:</label>
