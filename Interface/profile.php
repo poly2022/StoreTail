@@ -1,6 +1,19 @@
 
-<?php include("../DataAccessLayer/conectionBD.php");
-session_start(); ?>
+<?php
+require_once("../DataAccessLayer/conectionBD.php");
+require_once("../BusinessLayer/User/UserService.php");
+
+session_start();
+$userService = new UserService($conexao);
+
+// Obtenha os dados do perfil do usuário
+$profileData = $userService->getUserProfile($_SESSION["id"]);
+?>
+					<script> alert($profileData)</script>
+					<?php
+// Define o conteúdo específico da página
+ob_start(); // Inicia o buffer de saída
+?>
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -73,23 +86,8 @@ header h1 {
 } 
 </style>
 
-<?php
-    // Define o conteúdo específico da página
-    ob_start(); // Inicia o buffer de saída
-?>
-	<?php
-  
-			$query="select * from users where id= '".$_SESSION["id"]."'";
-			$result=mysqli_query($conexao,$query);
-			while($registo=mysqli_fetch_assoc($result)){
-				$first_name=$registo['first_name'];
-				$last_name=$registo['last_name'];
-				$user_name=$registo['user_name'];
-				$email=$registo['email'];
-				
-				
-				}
-		?>
+
+
 
 <div class="content">
 <div class="profile-container">
@@ -98,7 +96,7 @@ header h1 {
     </header>
     <section class="profile-picture-section">
         <div class="profile-picture">
-            <img src="default-profile.png" alt="Profile Picture">
+            <img src="default-profile.png" width="80" height="80" alt="Profile Picture">
             <br>
             <button class="new-picture-btn">new picture</button>
         </div>
@@ -107,24 +105,26 @@ header h1 {
         <form id="profileForm">
             <div class="form-field">
                 <label for="firstname">Firstname:</label>
-                <input type="text" id="firstname" name="firstname" value="<?php echo $first_name; ?>">
+                <input type="text" id="firstname" name="firstname" value="<?php echo $profileData['first_name']; ?>">
             </div>
             <div class="form-field">
                 <label for="lastname">Lastname:</label>
-                <input type="text" id="lastname" name="lastname" value="<?php echo $last_name; ?>">
+                <input type="text" id="lastname" name="lastname" value="<?php echo $profileData['last_name']; ?>">
             </div>
             <div class="form-field">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" disabled placeholder="" value="<?php echo $user_name; ?>">
+                <input type="text" id="username" name="username" disabled placeholder="" value="<?php echo $profileData['user_name']; ?>">
             </div>
             <div class="form-field">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="<?php echo $email; ?>">
+                <input type="email" id="email" name="email" value="<?php echo $profileData['email']; ?>">
             </div>
+            <div class="form-field">
             <button type="submit" class="update-btn">update</button>
+            </div>
             <div class="form-field">
             <a href="logout.php"
-            <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size">Logout</button>
+            <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size" style="background-color: red;">Logout</button>
             </a>
             </div>
         </form>
