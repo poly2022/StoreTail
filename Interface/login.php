@@ -38,12 +38,12 @@
     </div>
         <form action="index.php?validate_login.php" id="loginForm" method="POST">
             <div class="form-group">
-                <label for="username">Username: <span class="required">*</span></label>
+                <label for="username">Username: <span class="required"></span></label>
                 <input type="text" id="username" name="username" required>
             </div>
 
             <div class="form-group">
-                <label for="password">Password: <span class="required">*</span></label>
+                <label for="password">Password: <span class="required"></span></label>
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
@@ -51,7 +51,7 @@
                 <input type="password" id="confirm-password" name="confirm-password">
             </div>
             <div class="form-group">
-                <h5><a href="registar.php">Register Here</a></h5>
+                <h9><a href="registar.php">Register Here</a></h9>
             </div>
             <button class="styled-submit-btn" type="submit">Submit</button>
             <div id="validationErrors"></div>
@@ -61,5 +61,5 @@
 <?php
     $content = ob_get_clean(); // Obtém o conteúdo do buffer e limpa o buffer
 
-    include('pageDefault.php'); // Inclui o arquivo do template com o conteúdo especificado
+    include('pageDefaultMenu.php'); // Inclui o arquivo do template com o conteúdo especificado
 ?>
