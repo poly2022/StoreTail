@@ -93,12 +93,16 @@ header h1 {
         <h1>MY PROFILE</h1>
     </header>
     <section class="profile-picture-section">
+    <form id="profileForm" method="POST" enctype="multipart/form-data">
         <div class="profile-picture">
-            <img src="default-profile.png" width="80" height="80" alt="Profile Picture">
+     
+            <img src="showfile_fotoperfil.php?id=<?php echo $_SESSION['id'];?>" width="80" height="80" alt="Profile Picture">
             <br>
-            <button class="new-picture-btn">new picture</button>
+            <input type="file" id="foto" name="foto">
+            <input type="submit" id="btfotoprofile" name="btfotoprofile" class="new-picture-btn" value="New Picture"/>
         </div>
-    </section>
+    </form>
+</section>
     <?php
     if(isset($_POST['btperfil'])){
 		$flag=false;
@@ -123,6 +127,25 @@ header h1 {
   } else {
       echo "Erro na atualização: " . mysqli_error($conexao);
   }
+  }elseif(isset($_POST['btfotoprofile'])){		
+    if($_FILES['foto']['error']==0){
+      $file_id=mysqli_insert_id($conexao);//ultimo registo inserido na base de dados
+      $file_name=$_FILES['foto']['name'];
+      $file_type=$_FILES['foto']['type'];
+      $file_size=$_FILES['foto']['size'];
+      $file_tmp=$_FILES['foto']['tmp_name'];
+      $data=base64_encode(file_get_contents($file_tmp));
+      $query="update users set photo_name='".$file_name."',photo_size='".$file_size."',photo_type='".$file_type."',photo_data='".$data."'WHERE id='{$_SESSION["id"]}'";	
+      $result_up=mysqli_query($conexao,$query);
+     
+    ?>
+      <SCRIPT LANGUAGE='JavaScript'>
+        window.alert('Fotografia Atualizada!')
+        window.location.href='profile.php';
+      </SCRIPT>		
+    <?php
+    }
+          
   }
 
   ?>
