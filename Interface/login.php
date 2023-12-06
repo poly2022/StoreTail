@@ -25,8 +25,13 @@
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="confirm-password">
             </div> -->
+            
             <div class="form-group">
                 <h9><a href="registar.php">Register Here</a></h9>
+            </div>
+
+            <div class="form-group">
+                <h9><a href="recuperar.php">Recover Password</a></h9>
             </div>
             <button class="styled-submit-btn" type="submit">Submit</button>
             <div id="validationErrors"></div>
