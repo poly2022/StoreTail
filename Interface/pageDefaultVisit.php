@@ -2,222 +2,208 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-    <script src="js/color-modes.js"></script>
+  <script src="js/color-modes.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.118.2">
-    <title>StoreTails</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.118.2">
+  <title>StoreTails</title>
 
-    <link href="css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
 
-    <link href="css/app.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    <link href="css/headers.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="css/headers.css" rel="stylesheet">
 </head>
 
 <style>
-    .text-body-secondary {
-        --bs-text-opacity: 1;
-        color: #fff3cd !important;
+  .text-body-secondary {
+    --bs-text-opacity: 1;
+    color: #fff3cd !important;
+  }
+
+  .profile-image {
+    width: 40px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%/50%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .custom-navbar {
+    background-color: #E1700F;
+    height: 60px;
+
+    font-weight: bold;
+    font-size: 12px;
+    padding-right: 0.5rem;
+    color: white
+  }
+
+  .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding-right: 0.5rem;
+    color: white
+  }
+
+  .custom-bg {
+    --bs-btn-bg: #E95A0C;
+    --bs-btn-color: #fff;
+  }
+
+  .nav-item {
+    margin-right: 10px;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
     }
+  }
 
-    .profile-image {
-        width: 40px;
-        height: 80px;
-        border: 2px solid white;
-        border-radius: 50%/50%;
-        overflow: hidden;
-        position: relative;
-    }
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
 
-    .profile-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        bottom: 0;
-    }
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
 
-    .custom-navbar {
-        background-color: #E1700F;
-        height: 60px;
+  .bi {
+    vertical-align: -.125em;
+    fill: white;
+  }
 
-        font-weight: bold;
-        font-size: 12px;
-        padding-right: 0.5rem;
-        color: white
-    }
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
 
-    .nav-link {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
-        padding-right: 0.5rem;
-        color: white
-    }
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
 
-    .custom-bg {
-        --bs-btn-bg: #E95A0C;
-        --bs-btn-color: #fff;
-    }
+  .btn-bd-primary {
+    --bd-orange-bg: #E95A0C;
+    --bd-orange-rgb: 233, 90, 12;
 
-    .nav-item {
-        margin-right: 10px;
-    }
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-orange-bg);
+    --bs-btn-border-color: var(--bd-orange-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #D24700;
+    --bs-btn-hover-border-color: #D24700;
+    --bs-btn-focus-shadow-rgb: var(--bd-orange-rbg);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #D24700;
+    --bs-btn-active-border-color: #D24700;
+  }
 
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-    }
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
 
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-        }
-    }
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
 
-    .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
+  .btn-size {
+    --bs-btn-padding-y: .25rem;
+    --bs-btn-padding-x: .5rem;
+    --bs-btn-font-size: .75rem;
+  }
 
-    .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-    }
+  .nav-pills .nav-link {
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+    padding-bottom: 1px;
+    font-size: 14px;
+  }
 
-    .bi {
-        vertical-align: -.125em;
-        fill: white;
-    }
+  .nav-pills .nav-link:hover,
+  .nav-pills .nav-link:focus,
+  .nav-pills .nav-link.active {
+    color: #E95A0C !important;
+    border-bottom-color: #E95A0C;
+  }
 
-    .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-    }
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
 
-    .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-    }
+  .btn-read {
+    /* width: 100%; */
+    background-color: #E95A0C;
+    color: white;
+    height: 30px;
+    width: 60%;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .btn-bd-primary {
-        --bd-orange-bg: #E95A0C;
-        --bd-orange-rgb: 233, 90, 12;
+  .card {
+    width: 200px;
+    height: auto;
+    margin-bottom: 50px;
+  }
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-orange-bg);
-        --bs-btn-border-color: var(--bd-orange-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #D24700;
-        --bs-btn-hover-border-color: #D24700;
-        --bs-btn-focus-shadow-rgb: var(--bd-orange-rbg);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #D24700;
-        --bs-btn-active-border-color: #D24700;
-    }
-
-    .bd-mode-toggle {
-        z-index: 1500;
-    }
-
-    .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-    }
-
-    .btn-size {
-        --bs-btn-padding-y: .25rem;
-        --bs-btn-padding-x: .5rem;
-        --bs-btn-font-size: .75rem;
-
-
-    }
-
-    .nav-pills .nav-link {
-        border-bottom: 2px solid transparent;
-        transition: border-color 0.3s, color 0.3s;
-        padding-bottom: 1px;
-        font-size: 14px;
-    }
-
-    .nav-pills .nav-link:hover,
-    .nav-pills .nav-link:focus,
-    .nav-pills .nav-link.active {
-        color: #E95A0C !important;
-        border-bottom-color: #E95A0C;
-    }
-
-    body {
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .card-img-overlay {
-        background-color: rgba(0, 0, 0, 0.6);
-        position: bottom;
-        bottom: 0;
-        width: 100%;
-        height: 5vh;
-    }
-
-    .btn-read {
-        /* width: 100%; */
-        background-color: #E95A0C;
-        color: white;
-        height: 30px;
-        line-height: 30px;
-        font-size: 14px;
-        font-weight: bold;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .card-title {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        color: white;
-        padding: 10px;
-    }
-
-    .card {
-        width: 60%;
-        height: 100%;
-    }
-
-    .custom-img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-    }
+  .custom-img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
 </style>
 
 <body>
@@ -343,7 +329,7 @@
       </div>
         </header>
 
-        <div class="container-fluid d-flex justify-content-center align-items-center bg-body-tertiary">
+        <div class="container-fluid  d-flex justify-content-center align-items-center bg-body-tertiary">
             <div class="container" style="max-height: 80vh; overflow-y: auto;">
                <!-- Conteúdo variável -->
                 <?php echo $content; ?>
