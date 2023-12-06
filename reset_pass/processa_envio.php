@@ -141,7 +141,7 @@ $result=mysqli_query($conexao,$sql);
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'a22101966@islagaia.pt';                     // SMTP username
-    $mail->Password   = 'AnamariaPortugal200';                               // SMTP password
+    $mail->Password   = 'teste';                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 

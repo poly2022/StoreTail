@@ -33,7 +33,9 @@ if (isset($_GET['pagina'])) {
 if (isset($_SESSION["user_types_id"])) {
   if ($_SESSION["user_types_id"] == 1) { 
       include("pageDefault2.php");
-  }
+  }else if ($_SESSION["user_types_id"] == 2) { 
+    include("pageDefault2.php");
+}
 }else include("pageDefaultVisit.php");
 
 
