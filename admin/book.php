@@ -190,27 +190,6 @@ include('includes/footer.php');
     </div>
 
 <!-- Delete Book -->
-<?php
-if(isset($_POST['DeleteBook']))
-{
-    $book_id = $_POST['delete_id'];
- 
-
-    $query = "DELETE FROM books WHERE id = '$book_id'";
-    $query_run = mysqli_query($con, $query);
-
-    if($query_run)
-    {
-        $_SESSION['status'] = "Book Deleted Successfully";
-        header("Location: book.php");
-    }
-    else
-    {   
-        $_SESSION['status'] = "Book Deleted Failed";
-        header("Location: book.php");
-    }
-}
-?>
 <script>
     $(document).ready(function(){
         $('.deletebtn').click(function(e){
