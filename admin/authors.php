@@ -18,7 +18,7 @@ include('config/dbcon.php');
                         <span aria-hidden="true"> &times; </span>
                     </button>
                 </div>
-                <form action="registeredcode.php" method="POST">
+                <form action="authorscode.php" method="POST">
                     <div class="modal-body">
                         <div class="form--group">
                             <label for="">Name</label>
@@ -31,7 +31,7 @@ include('config/dbcon.php');
                         </div>
                         <div class="form--group">
                             <label for="">Photo</label>
-                            <input type="file" name="author_photo_url" class="form-control" placeholder="Photo">
+                            <input type="text" name="author_photo_url" class="form-control" placeholder="Photo">
                         </div>
                         <div class="form--group">
                             <label for="">Nationality</label>
@@ -40,7 +40,7 @@ include('config/dbcon.php');
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="addUser" class="btn btn-primary">Save</button>
+                        <button type="submit" id="addAuthors" name="addAuthors" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
@@ -150,7 +150,7 @@ include('includes/footer.php');
                     </p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="deleteAuthorbtn" class="btn btn-primary">Yes, Delete</button>
+                        <button type="submit" id="DeleteAuthors" name="DeleteAuthors" class="btn btn-primary">Yes, Delete</button>
                     </div>
             </form>
         </div>

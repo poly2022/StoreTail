@@ -15,12 +15,12 @@ if(isset($_POST['addAuthors']))
 
     if($author_query_run)
     {
-        $_SESSION['status'] = "Book Added Successfully";
+        $_SESSION['status'] = "Author Added Successfully";
         header("Location: authors.php");
     }
     else
     {   
-        $_SESSION['status'] = "Book Added Failed";
+        $_SESSION['status'] = "Author Added Failed";
         header("Location: authors.php");
     }
 }
@@ -45,6 +45,27 @@ if(isset($_POST['UpdateAuthor']))
     else
     {   
         $_SESSION['status'] = "Author Update Failed";
+        header("Location: authors.php");
+    }
+}
+
+
+if(isset($_POST['DeleteAuthors']))
+{
+    $author_id = $_POST['delete_id'];
+ 
+
+    $query = "DELETE FROM authors WHERE id = '$author_id'";
+    $query_run = mysqli_query($con, $query);
+
+    if($query_run)
+    {
+        $_SESSION['status'] = "Book Deleted Successfully";
+        header("Location: authors.php");
+    }
+    else
+    {   
+        $_SESSION['status'] = "Book Deleted Failed";
         header("Location: authors.php");
     }
 }
