@@ -18,7 +18,7 @@ include('config/dbcon.php');
                         <span aria-hidden="true"> &times; </span>
                     </button>
                 </div>
-                <form action="genrecode.php" method="POST">
+                <form action="genrescode.php" method="POST">
                     <div class="modal-body">
                         <div class="form--group">
                             <label for="">
@@ -27,12 +27,12 @@ include('config/dbcon.php');
                         </div>
                         <div class="form--group">
                             <label for="">Genre</label>
-                            <input type="text" name="genre" class="form-control" placeholder="Genre">
+                            <input type="text" id="genre" name="genre" class="form-control" placeholder="Genre">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="addGenre" class="btn btn-primary">Save</button>
+                        <button type="submit" id="addGenre" name="addGenre" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
@@ -126,13 +126,13 @@ include('includes/footer.php');
 
             <form action="genrescode.php" method="POST">
                 <div class="modal-body">
-                    <input type="text" name="delete_id" class="delete_genre_id">
+                    <input type="text" id="delete_id" name="delete_id" class="delete_genre_id">
                     <p>
                         Are you sure, you want to delete this data?
                     </p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="deleteGenrebtn" class="btn btn-primary">Yes, Delete</button>
+                        <button type="submit" id="DeleteGenre" name="DeleteGenre" class="btn btn-primary">Yes, Delete</button>
                     </div>
             </form>
         </div>

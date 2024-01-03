@@ -12,12 +12,12 @@ if(isset($_POST['addGenre']))
     if($genre_query_run)
     {
         $_SESSION['status'] = "Genre Added Successfully";
-        header("Location: genre.php");
+        header("Location: genres.php");
     }
     else
     {   
         $_SESSION['status'] = "Genre Added Failed";
-        header("Location: genre.php");
+        header("Location: genres.php");
     }
 }
 
@@ -37,6 +37,26 @@ if(isset($_POST['UpdateGenre']))
     else
     {   
         $_SESSION['status'] = "Genre Update Failed";
+        header("Location: genres.php");
+    }
+}
+
+if(isset($_POST['DeleteGenre']))
+{
+    $genre_id = $_POST['delete_id'];
+ 
+
+    $query = "DELETE FROM genres WHERE id = '$genre_id'";
+    $query_run = mysqli_query($con, $query);
+
+    if($query_run)
+    {
+        $_SESSION['status'] = "Genre Deleted Successfully";
+        header("Location: genres.php");
+    }
+    else
+    {   
+        $_SESSION['status'] = "Genre Deleted Failed";
         header("Location: genres.php");
     }
 }

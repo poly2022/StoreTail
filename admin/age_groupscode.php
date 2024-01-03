@@ -2,7 +2,7 @@
 session_start();
 include('config/dbcon.php');
 
-if(isset($_POST['addAge_group']))
+if(isset($_POST['addAge']))
 {
     $age_group = $_POST['age_group'];
 
@@ -38,6 +38,26 @@ if(isset($_POST['UpdateAgeGroup']))
     else
     {   
         $_SESSION['status'] = "Age Group Update Failed";
+        header("Location: age_groups.php");
+    }
+}
+
+if(isset($_POST['DeleteAge']))
+{
+    $age_id = $_POST['delete_id'];
+ 
+
+    $query = "DELETE FROM age_groups WHERE id = '$age_id'";
+    $query_run = mysqli_query($con, $query);
+
+    if($query_run)
+    {
+        $_SESSION['status'] = "Age Group Deleted Successfully";
+        header("Location: age_groups.php");
+    }
+    else
+    {   
+        $_SESSION['status'] = "Age Group Deleted Failed";
         header("Location: age_groups.php");
     }
 }

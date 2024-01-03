@@ -18,7 +18,7 @@ include('config/dbcon.php');
                         <span aria-hidden="true"> &times; </span>
                     </button>
                 </div>
-                <form action="age_groupcode.php" method="POST">
+                <form action="age_groupscode.php" method="POST">
                     <div class="modal-body">
                         <div class="form--group">
                             <label for="">
@@ -27,12 +27,12 @@ include('config/dbcon.php');
                         </div>
                         <div class="form--group">
                             <label for="">Age Groups</label>
-                            <input type="text" name="age_group" class="form-control" placeholder="Age_group">
+                            <input type="text" id="age_group" name="age_group" class="form-control" placeholder="Age_group">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="addGenre" class="btn btn-primary">Save</button>
+                        <button type="submit" id="addAge" name="addAge" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
@@ -133,7 +133,7 @@ include('includes/footer.php');
                     </p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="deleteBookbtn" class="btn btn-primary">Yes, Delete</button>
+                        <button type="submit" id="DeleteAge" name="DeleteAge" class="btn btn-primary">Yes, Delete</button>
                     </div>
             </form>
         </div>
