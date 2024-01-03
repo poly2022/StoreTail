@@ -48,10 +48,13 @@ include('config/dbcon.php');
                     <form action="age_groupscode.php" method="POST">
                         <div class="modal-body">
                             <?php
-                            if (isset($_GET['age_group_id'])) 
+                            if (isset($_GET['age_id'])) 
                             {
-                                $age_group_id = $_GET['age_group_id'];
-                                $query = "SELECT * FROM age_groups WHERE id= '$age_group_id' LIMIT 1" ;
+                                ?>
+                              
+                                <?php
+                                $age_id = $_GET['age_id'];
+                                $query = "SELECT * FROM age_groups WHERE id= '$age_id' LIMIT 1" ;
                                 $query_run = mysqli_query($con, $query);
 
                                 if(mysqli_num_rows($query_run) > 0 )
@@ -59,10 +62,10 @@ include('config/dbcon.php');
                                     foreach($query_run as $row)
                                     {
                                         ?>
-                                            <input type="text" name = "age_group_id" value="<?php echo $row['id']; ?> ">
+                                            <input type="text" id="age_id" name = "age_id" value="<?php echo $row['id']; ?> ">
                                             <div class="form--group">
                                                 <label for="">Age Group</label>
-                                                <input type="text" name="age_group" value="<?php echo $row['age_group']; ?>" class="form-control" placeholder="Age Group">
+                                                <input type="text" id="age_group" name="age_group" value="<?php echo $row['age_group']; ?>" class="form-control" placeholder="Age Group">
                                             </div>   
                                         <?php
                                     }
@@ -76,7 +79,7 @@ include('config/dbcon.php');
                             ?>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" name="UpdateAgeGroup" class="btn btn-primary">Update</button>
+                            <button type="submit" id="UpdateAgeGroup" name="UpdateAgeGroup" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>

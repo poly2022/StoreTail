@@ -91,7 +91,7 @@ include('config/dbcon.php');
                                 <td><?php echo $row['id']; ?></td>
                                 <td><?php echo $row['age_group']; ?></td>
                                 <td>
-                                    <a href="age_groups-edit.php?age_groups_id=<?php echo $row['id']; ?>" class="btn btn-info btn-sm ">Edit</a>
+                                    <a href="age_groups-edit.php?age_id=<?php echo $row['id']; ?>" class="btn btn-info btn-sm ">Edit</a>
                                     <button type="button" value="<?php echo $row['id']; ?>" class="btn btn-danger btn-sm deletebtn ">Delete</button>
                                 </td>
                             <?php

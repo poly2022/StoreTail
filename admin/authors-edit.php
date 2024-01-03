@@ -92,7 +92,7 @@ include('config/dbcon.php');
                             ?>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" name="UpdateAuthor" class="btn btn-primary">Update</button>
+                            <button type="submit" id="UpdateAuthor" name="UpdateAuthor" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>

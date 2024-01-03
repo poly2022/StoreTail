@@ -26,7 +26,7 @@ if(isset($_POST['UpdateGenre']))
     $genre_id = $_POST['genre_id'];
     $genre = $_POST['genre'];
 
-    $query = "UPDATE genres user_type_id = '$genre'  WHERE id = '$genre_id'";
+    $query = "UPDATE genres SET genre = '$genre'  WHERE id = '$genre_id'";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)

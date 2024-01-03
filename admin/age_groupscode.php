@@ -23,11 +23,11 @@ if(isset($_POST['addAge_group']))
 
 if(isset($_POST['UpdateAgeGroup']))
 {
-    $age_group_id = $_POST['age_group_id'];
-    $age_group = $_POST['age_group'];
+    $age_id = $_POST['age_id'];
+    $age_group = mysqli_real_escape_string($con, $_POST['age_group']);
 
 
-    $query = "UPDATE age_groups age_group = '$age_group'  WHERE id = '$age_group_id'";
+    $query = "UPDATE age_groups SET age_group = '$age_group'  WHERE id = '$age_id'";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
