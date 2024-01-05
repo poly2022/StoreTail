@@ -15,14 +15,14 @@
 					$_SESSION["user_name"]=$registo["user_name"];
 					$_SESSION["user_types_id"]=$registo["user_types_id"];
 					?>
-					<script> alert("Login")</script>
+					<script> alert("Login Successfully")</script>
 					<?php
 				}else { ?>
-						<script> alert("Senha incorreta ")</script><?php
+						<script> alert("Wrong Password")</script><?php
 					}
 			
 	}else { ?>
-			<script> alert("Login incorreto ")</script><?php	
+			<script> alert("Incorrect Login")</script><?php	
 				
 			}
 

@@ -171,6 +171,9 @@ header h1 {
             <input type="submit" name="btperfil" id="btperfil" value="Update" class="update-btn"/>
             </div>
             <div class="form-field">
+              <a href="premium.php">Become Premium</a>
+            </div>
+            <div class="form-field">
             <a href="logout.php">
             <button type="button" class="btn btn-bd-primary btn-sm fs-8 btn-size" style="background-color: red;">Logout</button>
             </a>
