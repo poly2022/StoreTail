@@ -15,7 +15,6 @@ ob_start();
         <li>Violate any local, state, national, or international laws.</li>
         <li>Send spam or unsolicited messages.</li>
         <li>Engage in illegal or unethical activities.</li>
-        <!-- Other restrictions -->
     </ul>
 
     <h4>Content and Intellectual Property</h4>
@@ -25,8 +24,6 @@ ob_start();
     <h4>Disclaimer of Liability</h4>
     <p>We do not guarantee the accuracy, completeness, or timeliness of the information presented on this site.</p>
     <p>We are not liable for any damages resulting from the use or inability to use this site.</p>
-
-    <!-- Other sections as per your needs -->
 
     <h4>Modifications to these Terms</h4>
     <p>We reserve the right to modify these terms at any time. It is your responsibility to periodically check for changes.</p>

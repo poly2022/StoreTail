@@ -409,7 +409,7 @@ include('../DataAccessLayer/SearchBook.php');
   </div>
 </div>
 
-<?php include('footer.php'); ?>
+<?php include('footer.php'); // Inclui o arquivo do template padrão do footer?>
 
     </div>
 

@@ -206,7 +206,10 @@
   }
 </style>
 
+
 <body>
+
+  <!-- ... Dropdown para mudança de tema ... -->
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
       <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
@@ -281,6 +284,7 @@
 
 
   <main>
+    <!-- ... Seção do cabeçalho com imagem de fundo, navegação, e barra de pesquisa ... -->
     <header class="position-relative">
       <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/9447293-outono-rural-paisagem-a-noite-luz-com-por-do-sol-azul-e-laranja-ceu-fundo-desenho-de-outono-estacao-no-campo-com-floresta-arvore-e-campo-grama-com-sunrise-backdrop-natural-banner-vetor.jpg" class="img-fluid w-100" style="height: 45vh; object-fit: cover;" alt="Background Image">
       <div class="position-absolute top-0 start-0 w-100">
@@ -331,11 +335,11 @@
     <div class="container-fluid d-flex justify-content-center align-items-center bg-body-tertiary flex-column">
       <h2 style="color: #E95A0C;" class="text-center mt-4">New Books</h2>
       <div class="container bg-white py-4 mb-4" style="max-height: 80vh; overflow-y: auto;">
-        <!-- Conteúdo variável -->
+        <!-- Conteúdo dinâmico gerado pelo PHP -->
         <?php echo $content; ?>
       </div>
     </div>
-    <?php include('footer.php'); ?>
+    <?php include('footer.php'); ?> <!-- Inclui o arquivo do template padrão do footer -->
     </div>
   </main>
   <script src="js/bootstrap.bundle.min.js"></script>

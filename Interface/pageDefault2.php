@@ -332,7 +332,7 @@
 
         <div class="container-fluid  d-flex justify-content-center align-items-center bg-body-tertiary">
             <div class="container" style="max-height: 80vh; overflow-y: auto;">
-               <!-- Conteúdo variável -->
+                <!-- Conteúdo dinâmico gerado pelo PHP -->
                 <?php echo $content; ?>
             </div>
         </div>

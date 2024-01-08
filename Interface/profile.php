@@ -185,5 +185,5 @@ header h1 {
 <?php
     $content = ob_get_clean(); // Obtém o conteúdo do buffer e limpa o buffer
 
-    include('pageDefault.php'); // Inclui o arquivo do template com o conteúdo especificado
+    include('pageDefault.php'); // Inclui o arquivo da página padrão do site
 ?>

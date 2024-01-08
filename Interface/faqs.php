@@ -1,4 +1,5 @@
 <?php
+// Inicia o buffer de saída
 ob_start();
 ?>
 <div class="content">
@@ -6,6 +7,7 @@ ob_start();
         <img src="../Interface/img/storytail-logo-02.png" alt="Logo da Empresa" style="width: 200px; border-radius: 4px">
     </div>
 
+    <!-- Títulos e textos das perguntas frequentes -->
     <h2>FAQs</h2>
 
     <h5>What is Lorem Ipsum?</h5>
@@ -27,7 +29,9 @@ ob_start();
     <p>Yes, you can modify your account details by accessing the account settings page.</p>
 </div>
 <?php
+// Captura o conteúdo do buffer de saída e limpa o buffer
 $content = ob_get_clean();
 
+// Inclui o conteúdo gerado em 'pageDefault.php'
 include('pageDefault.php');
 ?>
