@@ -330,10 +330,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="new_premium.php" class="nav-link">
               <i class="nav-icon fa fa-star"></i>
               <p>
                 New Premium Users
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="premium_users.php" class="nav-link">
+              <i class="nav-icon 	fas fa-dollar-sign"></i>
+              <p>
+                 Premium Users
               </p>
             </a>
           </li>

@@ -56,8 +56,9 @@ body{
   padding: 0 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
+
 .card-container{
   display: grid;
   width: 100%;
@@ -140,6 +141,7 @@ body{
   align-items: center;
   flex-direction: column;
   transform: translateY(-30px);
+  text-align: center; 
 }
 .card-body .card-content ul{
   width: 100%;
@@ -285,13 +287,15 @@ body{
                 <div class="card-body">
                     <div class="top-shape"></div>
                     <div class="card-content">
+                  <form action="premiumcode.php" method="POST">
                         <ul>
                             <li class="active">Read Every Book. <i class="uil uil-check-circle"></i></li>
                             <li class="active">Watch Book`s Videos. <i class="uil uil-check-circle"></i></li>
-                            <li class="active">24/7 Live Support. <i class="uil uil-times-circle"></i></li>
-                            <li class="disabled">Lorem Ipsum Dolor. <i class="uil uil-times-circle"></i></li>
-                            <li class="disabled">Lorem Ipsum Dolor. <i class="uil uil-times-circle"></i></li>
-                        </ul> <button class="buy-btn">Buy Now</button>
+                            <li class="active">24/7 Live Support. <i class="uil uil-check-circle"></i></li>
+                            <!-- <li class="disabled">Lorem Ipsum Dolor. <i class="uil uil-times-circle"></i></li> -->
+                            <!-- <li class="disabled">Lorem Ipsum Dolor. <i class="uil uil-times-circle"></i></li> -->
+                        </ul> <button type="submit" id="butbtn" name="buybtn" class="buy-btn">Buy Now</button>
+                   </form>
                     </div>
                 </div>
                 <div class="ribbon"></div>
@@ -305,5 +309,5 @@ body{
 <?php
     $content = ob_get_clean(); // Obtém o conteúdo do buffer e limpa o buffer
 
-    include('pageDefault.php'); // Inclui o arquivo do template com o conteúdo especificado
+    include('pageDefault2.php'); // Inclui o arquivo do template com o conteúdo especificado
 ?>
