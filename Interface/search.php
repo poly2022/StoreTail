@@ -159,7 +159,6 @@ include('../DataAccessLayer/SearchBook.php');
     --bs-btn-padding-y: .25rem;
     --bs-btn-padding-x: .5rem;
     --bs-btn-font-size: .75rem;
-    "
 
   }
 
@@ -270,7 +269,7 @@ include('../DataAccessLayer/SearchBook.php');
   position: absolute;
     margin-left: -260px;
     margin-top: 150px;
-  border:0px
+  border:0px;
   display: block; 
   width: 900px;
   height: 700px;

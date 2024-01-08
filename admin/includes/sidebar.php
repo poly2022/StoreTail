@@ -298,8 +298,16 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book-reader"></i>
+              <p>
+              Book Activities
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="authors.php" class="nav-link">
-              <i class="nav-icon fa fa-edit"></i>
+              <i class="nav-icon fa fa-feather"></i>
               <p>
                 Edit Authors
               </p>
@@ -307,7 +315,7 @@
           </li>
           <li class="nav-item">
             <a href="genres.php" class="nav-link">
-              <i class="nav-icon fa fa-music"></i>
+              <i class="nav-icon fa fa-book-open"></i>
               <p>
                 Edit Genres
               </p>
@@ -322,7 +330,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="age_groups.php" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fa fa-star"></i>
               <p>
                 New Premium Users
