@@ -25,7 +25,7 @@ $books = $bookDL->getBooks();
             <div class="d-flex justify-content-center align-items-center">
                 <?php if ($book->getAccessLevel() === '0') : ?>
                     <!-- Se o acesso for livre, exibe o botão 'Read' -->
-                    <a href="read.php" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">Read</a>
+                    <a href="#" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">Read</a>
                 <?php else : ?>
                     <!-- Se o acesso não for livre, exibe o botão 'Preview' -->
                     <a href="preview.php" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white; position: relative; padding-left: 30px;">
