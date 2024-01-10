@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
+<?php
+require_once("../DataAccessLayer/conectionBD.php");
+require_once("../BusinessLayer/User/UserService.php");
 
+
+// Check if a session is not already active
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$userService = new UserService($conexao);
+
+// Obtenha os dados do perfil do utilizador
+$profileData = $userService->getUserProfile($_SESSION["id"]);
+?>
 <head>
   <script src="js/color-modes.js"></script>
 
@@ -324,6 +338,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-secondary" href="#">Most Popular</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="favourites.php">Favourites</a>
             </li>
           </ul>
         </div>
