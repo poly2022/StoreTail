@@ -1,6 +1,36 @@
 <?php
 include('../DataAccessLayer/conectionBD.php');
-include('../DataAccessLayer/SearchBook.php');
+
+$title = '';
+
+$bookId = isset($_GET['id']) ? $_GET['id'] : null;
+
+
+if ($bookId !== null) {
+            $querybook="select * from books where id= '$bookId'";
+            $resultbook=mysqli_query($conexao,$querybook);
+
+            while($registo=mysqli_fetch_assoc($resultbook)){
+                $title=$registo['title'];
+                $cover_url=$registo['cover_url'];
+                $read_time=$registo['read_time'];   
+              }
+
+           $queryAuthors_books="select * from author_books where books_id= '$bookId'";
+            $resultAuthors_books=mysqli_query($conexao,$queryAuthors_books); 
+
+            while($registo=mysqli_fetch_assoc($resultAuthors_books)){
+                  $Authors_id=$registo['authors_id'];
+                }
+
+             $queryAuthors="select * from authors where id= '$Authors_id'";
+            $resultAuthors=mysqli_query($conexao,$queryAuthors); 
+            
+            while($registo=mysqli_fetch_assoc($resultAuthors)){
+                  $first_name=$registo['first_name'];
+                  $last_name=$registo['last_name'];
+                }
+              }
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -238,54 +268,47 @@ include('../DataAccessLayer/SearchBook.php');
     text-align:center;
     align-items:center;
 }
-.image-about-position{
-    position: absolute;
-    margin-left: -620px;
-    margin-top: 20px;
+.collapse-box {
+ border: 1px solid #000;
+    margin-left: 50px;
+    margin-right: 30px;
+ margin-bottom: 10px;
+ margin-top: 20px;
 }
 
-.title-about-position{
-  position: absolute;
-    margin-left: 400px;
-    margin-top: 30px;
+.collapse-box-title {
+ background-color: #FFFFFF;
+ font-size: 23px;
+ padding: 10px;
+ cursor: pointer;
+ color: black;
+ text-align: left ;
 }
-.from-author{
-  position: absolute;
-    margin-left: -250px;
-    margin-top: 80px;
-    font-size: 25px;
+
+.collapse-box-content {
+ padding: 10px;
+ display: none;
+ color: #a9a9a9;
 }
-.rating{
-  position: absolute;
-    margin-left: -50px;
-    margin-top: 100px;
+button {
+ padding: 10px 20px;
+ font-size: 16px;
+ cursor: pointer;
+ background-color: #FFFFFF;
+ border: 2px solid #a9a9a9;
+ border-radius: 50%;
+ color: black;
 }
-.checked {
-  color: orange;
+
+button.active {
+ background-color: #76ff7a;
+ color: white;
 }
-.padding-20px{
-  padding-right: 20px;
-}
-.textarea-size{
-  position: absolute;
-    margin-left: -260px;
-    margin-top: 150px;
-  border:0px
-  display: block; 
-  width: 900px;
-  height: 700px;
-}
-.Button-read{
-  position: absolute;
-    margin-left: 100px;
-    margin-top: 450px;
-  background-color: #E95A0C;
-  border-radius: 12px;
-}
-.Sort{
-  position: absolute;
-    margin-left: 1230px;
-    margin-top: -50px;
+.button-and-title {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 50px;;
 }
 </style>
 
@@ -366,56 +389,103 @@ include('../DataAccessLayer/SearchBook.php');
 
   <main>
   <?php include('Header.php'); ?>
-    <br>
 
+    <br>
+      <div class="white-rectangle ">
+        <br><br><br><br><br>
+        <h1 style="color: black;" class="fw-bold mb-4"><?php echo $first_name; echo $last_name; ?></h1>
+    </div>
+      <div class="position-absolute w-100 bg-white">
+        <div class="container">
+          <ul class="nav nav-pills justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link text-secondary me-3" href="livro.php">About this book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary me-3" href="#">Read Now</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="#">Tail it yourself</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
 
       <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-body-tertiary">
   <div class="container" style="max-height: 80vh; overflow-y: auto;">
-    <h1 style="color: #E95A0C;" class="text-center">Books WE HAVE</h1>
+    <h1 style="color: #E95A0C;" class="text-center">ATIVIDADES</h1>
     <div class="white-rectangle-about" >
-    <div class="container bg-white py-4 mb-4" style="max-height: 80vh; overflow-y: auto;">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-        <?php
-        $SearchBook = new SearchBook($conexao);
-        $books_Search = $SearchBook->getBooks();
-        ?>
-      <?php foreach ($books_Search as $book) : ?>
-       <div class="col h-80">
-        <div class="card h-80 border-0 ">
-            <div style="height: 250px; overflow: hidden;">
-                <img src="<?php echo $book->getCoverUrl(); ?>" class="card-img-top img-fluid" style="object-fit: cover; height: 100%;" alt="...">
-            </div>
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
-                <small class="text-body-secondary"><?php echo $book->getTitle(); ?></small>
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <?php if ($book->getAccessLevel() === '0') : ?>
-                    <a href="read.php" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">Read</a>
-                <?php else : ?>
-                    <a href="preview.php?id=<?php echo $book->getId(); ?>" id="<?php echo $book->getId(); ?>" onclick="reply_click(clicked_id)" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white; position: relative; padding-left: 30px;" >
-                        <i class="fas fa-lock" style="position: absolute; left: 0px; top: 50%; transform: translateY(-50%); background-color: black; padding: 9px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;"></i>
-                        Preview
-                    </a>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-    
-<?php endforeach; ?>
+    <div class="button-and-title">
+    <button class="toggle-button">+</button>
+    <div class="collapse-box">
+ <div class="collapse-box-title" onclick="toggleCollapse(this)">Alphabet Bingo Game</div>
+ <div class="collapse-box-content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aperiam quas tempore dolores beatae officiis reprehenderit nisi adipisci ab autem culpa, repellendus quos vero nemo aut consectetur, architecto quisquam est!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae culpa sapiente praesentium nobis nesciunt, rem temporibus doloribus cumque hic ab veritatis esse consequatur nisi, quisquam natus. Animi saepe tenetur itaque?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste mollitia quae doloribus repudiandae itaque fuga sequi nostrum corrupti praesentium, voluptatum quisquam tempora, ad veritatis dolor ipsam modi dignissimos, cum laboriosam?</div>
 </div>
-      </div>
-        
+</div>
+<div class="button-and-title">
+<button class="toggle-button">+</button>
+<div class="collapse-box">
+ <div class="collapse-box-title" onclick="toggleCollapse(this)">Origami Frogs</div>
+ <div class="collapse-box-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi itaque deserunt debitis quis in, cumque fuga placeat? Porro ab iste excepturi et enim adipisci impedit exercitationem a, quod optio fuga.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio minus repellendus omnis voluptates, recusandae architecto? Facere, nulla cum? Enim voluptate delectus voluptates tempora fugiat, nesciunt deserunt laudantium asperiores ratione est?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo reprehenderit quia tempore illum earum, ad itaque laudantium tenetur ipsam aut quaerat accusantium veritatis in laborum rerum ipsa, voluptatum repellat odio.</div>
+</div>
+</div>
+<div class="button-and-title">
+<button class="toggle-button">+</button>
+<div class="collapse-box">
+ <div class="collapse-box-title" onclick="toggleCollapse(this)">Alphabet Bingo Game</div>
+ <div class="collapse-box-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi itaque deserunt debitis quis in, cumque fuga placeat? Porro ab iste excepturi et enim adipisci impedit exercitationem a, quod optio fuga.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio minus repellendus omnis voluptates, recusandae architecto? Facere, nulla cum? Enim voluptate delectus voluptates tempora fugiat, nesciunt deserunt laudantium asperiores ratione est?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo reprehenderit quia tempore illum earum, ad itaque laudantium tenetur ipsam aut quaerat accusantium veritatis in laborum rerum ipsa, voluptatum repellat odio.</div>
+</div>
+</div>
     </div>
   </div>
 </div>
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-body-tertiary">
+  <div class="container" style="max-height: 80vh; overflow-y: auto;">
+    <h1 style="color: #E95A0C; font-size: 70px;" class="text-center">Related Books</h1>
+    <button style="background-color: black;" class="Sort"><i style="color: white;" class="	fa fa-unsorted ">Sort</i></button>
+    
+    <div class="container bg-white py-4 mb-4" style="max-height: 80vh; overflow-y: auto;">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+      <?php include("../Interface/book.php") ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <?php include('footer.php'); ?>
 
     </div>
 
   </main>
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js">
+  </script>
+  <script >
+    function toggleCollapse(title) {
+ var content = title.nextElementSibling;
+ content.style.display = content.style.display === 'block' ? 'none' : 'block';
+}
+
+var buttons = document.querySelectorAll('.toggle-button');
+
+for (var i = 0; i < buttons.length; i++) {
+ buttons[i].addEventListener('click', function() {
+   this.classList.toggle('active');
+ });
+}
+
+
+  </script>
 </body>
 
 </html>
+
+

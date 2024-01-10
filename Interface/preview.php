@@ -5,6 +5,7 @@ $title = '';
 
 $bookId = isset($_GET['id']) ? $_GET['id'] : null;
 
+
 if ($bookId !== null) {
             $querybook="select * from books where id= '$bookId'";
             $resultbook=mysqli_query($conexao,$querybook);
@@ -188,6 +189,7 @@ if ($bookId !== null) {
     --bs-btn-padding-y: .25rem;
     --bs-btn-padding-x: .5rem;
     --bs-btn-font-size: .75rem;
+    "
 
   }
 
@@ -298,14 +300,21 @@ if ($bookId !== null) {
   position: absolute;
     margin-left: -260px;
     margin-top: 150px;
-  border:0px;
+  border:0px
   display: block; 
   width: 900px;
   height: 700px;
 }
 .Button-read{
   position: absolute;
-    margin-left: 100px;
+    margin-left: 40px;
+    margin-top: 450px;
+  background-color: #E95A0C;
+  border-radius: 12px;
+}
+.Button-ativ{
+  position: absolute;
+    margin-left: 260px;
     margin-top: 450px;
   background-color: #E95A0C;
   border-radius: 12px;
@@ -316,10 +325,7 @@ if ($bookId !== null) {
     margin-top: -50px;
 }
 </style>
-<?php
-echo $bookId;
-echo $title;
-?>
+
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
@@ -401,7 +407,7 @@ echo $title;
     <br>
       <div class="white-rectangle ">
         <br><br><br><br><br>
-        <h1 style="color: black;" class="fw-bold mb-4"><?php echo $title; ?></h1>
+        <h1 style="color: black;" class="fw-bold mb-4"><?php echo $first_name; echo $last_name; ?></h1>
     </div>
       <div class="position-absolute w-100 bg-white">
         <div class="container">
@@ -427,8 +433,8 @@ echo $title;
         <div class="container">
         <img src="<?php echo $cover_url; ?>" class="img-fluid image-about-position " alt="...">
         </div>
-        <h1 style="color: black;" class="fw-bold mb-4 title-about-position "><?php echo $title; ?></h1>
-        <label style="color: black;" class="from-author" for="html">From:<?php echo $first_name; echo $last_name; ?></label><br>
+        <h1 style="color: black;" class="fw-bold mb-4 title-about-position "><?php echo $first_name; echo $last_name; ?></h1>
+        <label style="color: black;" class="from-author" for="html">From:<a href="autores.php?id=<?php echo $Authors_id; ?>" id="<?php echo $Authors_id; ?>" onclick="reply_click('<?php echo $Authors_id; ?>')"><?php echo $first_name; echo $last_name; ?></a></label><br>
         <div class= "container rating">
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
@@ -445,6 +451,7 @@ echo $title;
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, soluta numquam excepturi harum officia ipsam blanditiis earum distinctio velit, explicabo voluptatibus unde nisi culpa beatae maxime exercitationem a atque laboriosam.
 </label>
 <button class="Button-read">Read Now</button>
+<a href="atividades.php?id=<?php echo $bookId;?>"><button class="Button-ativ">Atividades</button></a>
     </div>
   </div>
 </div>
@@ -462,7 +469,7 @@ echo $title;
 </div>
 
 
-<?php include('footer.php'); // Inclui o arquivo do template padrão do footer ?>
+<?php include('footer.php'); ?>
 
     </div>
 

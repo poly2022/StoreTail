@@ -1,6 +1,25 @@
 <?php
 include('../DataAccessLayer/conectionBD.php');
-include('../DataAccessLayer/SearchBook.php');
+
+$title = '';
+
+$authorId = isset($_GET['id']) ? $_GET['id'] : null;
+
+var_dump($_GET);
+
+if ($authorId !== null) {
+
+             $queryAuthors="select * from authors where id= '$authorId'";
+            $resultAuthors=mysqli_query($conexao,$queryAuthors); 
+            
+            while($registo=mysqli_fetch_assoc($resultAuthors)){
+                  $first_name=$registo['first_name'];
+                  $last_name=$registo['last_name'];
+                  $description=$registo['description'];
+                  $author_photo_url=$registo['author_photo_url'];
+                  $nationality=$registo['nationality'];
+                }
+              }
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -242,42 +261,36 @@ include('../DataAccessLayer/SearchBook.php');
     position: absolute;
     margin-left: -620px;
     margin-top: 20px;
+    width: 400px;
+    height: 500px;
 }
 
 .title-about-position{
   position: absolute;
-    margin-left: 400px;
+    margin-left: 450px;
     margin-top: 30px;
 }
 .from-author{
   position: absolute;
-    margin-left: -250px;
+    margin-left: -200px;
     margin-top: 80px;
     font-size: 25px;
-}
-.rating{
-  position: absolute;
-    margin-left: -50px;
-    margin-top: 100px;
-}
-.checked {
-  color: orange;
 }
 .padding-20px{
   padding-right: 20px;
 }
 .textarea-size{
   position: absolute;
-    margin-left: -260px;
+    margin-left: -200px;
     margin-top: 150px;
   border:0px
   display: block; 
-  width: 900px;
+  width: 800px;
   height: 700px;
 }
 .Button-read{
   position: absolute;
-    margin-left: 100px;
+    margin-left: 110px;
     margin-top: 450px;
   background-color: #E95A0C;
   border-radius: 12px;
@@ -288,7 +301,9 @@ include('../DataAccessLayer/SearchBook.php');
     margin-top: -50px;
 }
 </style>
-
+<?php
+echo $authorId
+?>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
@@ -366,49 +381,58 @@ include('../DataAccessLayer/SearchBook.php');
 
   <main>
   <?php include('Header.php'); ?>
-    <br>
 
+    <br>
+      <div class="white-rectangle ">
+        <br><br><br><br><br>
+        <h1 style="color: black;" class="fw-bold mb-4"><?php echo $first_name; echo $last_name; ?></h1>
+    </div>
+      <div class="position-absolute w-100 bg-white">
+        <div class="container">
+          <ul class="nav nav-pills justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link text-secondary me-3" href="livro.php">About this book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary me-3" href="#">Read Now</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="#">Tail it yourself</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
 
       <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-body-tertiary">
   <div class="container" style="max-height: 80vh; overflow-y: auto;">
-    <h1 style="color: #E95A0C;" class="text-center">Books WE HAVE</h1>
+    <h1 style="color: #E95A0C;" class="text-center">ABOUT THE AUTHOR</h1>
     <div class="white-rectangle-about" >
-    <div class="container bg-white py-4 mb-4" style="max-height: 80vh; overflow-y: auto;">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-        <?php
-        $SearchBook = new SearchBook($conexao);
-        $books_Search = $SearchBook->getBooks();
-        ?>
-      <?php foreach ($books_Search as $book) : ?>
-       <div class="col h-80">
-        <div class="card h-80 border-0 ">
-            <div style="height: 250px; overflow: hidden;">
-                <img src="<?php echo $book->getCoverUrl(); ?>" class="card-img-top img-fluid" style="object-fit: cover; height: 100%;" alt="...">
-            </div>
-            <div class="card-footer" style="background-color: rgba(0, 0, 0, 0.5); color: white; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
-                <small class="text-body-secondary"><?php echo $book->getTitle(); ?></small>
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <?php if ($book->getAccessLevel() === '0') : ?>
-                    <a href="read.php" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white;">Read</a>
-                <?php else : ?>
-                    <a href="preview.php?id=<?php echo $book->getId(); ?>" id="<?php echo $book->getId(); ?>" onclick="reply_click(clicked_id)" class="btn btn-read mt-2" style="background-color: #E95A0C; color: white; position: relative; padding-left: 30px;" >
-                        <i class="fas fa-lock" style="position: absolute; left: 0px; top: 50%; transform: translateY(-50%); background-color: black; padding: 9px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;"></i>
-                        Preview
-                    </a>
-                <?php endif; ?>
-            </div>
+        <div class="container">
+        <img src="<?php echo $author_photo_url; ?>" class="img-fluid image-about-position " alt="...">
         </div>
-    </div>
-    
-<?php endforeach; ?>
-</div>
-      </div>
-        
+        <h1 style="color: black;" class="fw-bold mb-4 title-about-position "><?php echo $first_name; echo $last_name; ?></h1>
+        <br>
+        <label style="color: black;" class="from-author" for="html">From:<?php echo $nationality; ?></label><br>
+<label style="color: black;" class="textarea-size"><?php echo $description; ?>
+</label>
+<button class="Button-read">View author books</button>
     </div>
   </div>
 </div>
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-body-tertiary">
+  <div class="container" style="max-height: 80vh; overflow-y: auto;">
+    <h1 style="color: #E95A0C; font-size: 70px;" class="text-center">Related Books</h1>
+    <button style="background-color: black;" class="Sort"><i style="color: white;" class="	fa fa-unsorted ">Sort</i></button>
+    
+    <div class="container bg-white py-4 mb-4" style="max-height: 80vh; overflow-y: auto;">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+      <?php include("../Interface/book.php") ?>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <?php include('footer.php'); ?>
 
